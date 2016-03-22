@@ -1,0 +1,2 @@
+# UseCordovaPluginFromWebApp
+在遠端的Web頁面使用Plugin來驅動設備原生功能
