@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "index";
+    var platform = ViewBag.Platform;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://cordovawebmvc.azurewebsites.net https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    @if (platform == "android" || platform == "ios" || platform == "windows")
+    {
+        @Scripts.Render("~/cordovalib/" + platform + "/cordova.js")
+    }
+
+    <div class="container">
+        <button id="cameraBtn" class="btn btn-primary btn-lg">Camera (MVC)</button>
+    </div>
+</body>
+@Scripts.Render("~/Scripts/index.js")
+</html>
